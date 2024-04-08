@@ -52,20 +52,25 @@ public class EmployeeMapTest {
 		empMap.addEmployee("3", "Michael", "Johnson", "michael.johnson@example.com");
 		empMap.addEmployee("4", "Emily", "Williams", "emily.williams@example.com");
 
-		assertEquals("John", empMap.getEmployeeMap().get("1").getFirstName());
-		assertEquals("Doe", empMap.getEmployeeMap().get("1").getLastName());
-		assertEquals("john.doe@example.com", empMap.getEmployeeMap().get("1").getEmail());
+		Employee john = empMap.getEmployeeMap().get("1");
+		Employee jane = empMap.getEmployeeMap().get("2");
+		Employee michael = empMap.getEmployeeMap().get("3");
+		Employee emily = empMap.getEmployeeMap().get("4");
 
-		assertEquals("Jane", empMap.getEmployeeMap().get("2").getFirstName());
-		assertEquals("Smith", empMap.getEmployeeMap().get("2").getLastName());
-		assertEquals("jane.smith@example.com", empMap.getEmployeeMap().get("2").getEmail());
+		assertEquals("John", john.getFirstName());
+		assertEquals("Doe", john.getLastName());
+		assertEquals("john.doe@example.com", john.getEmail());
 
-		assertEquals("Michael", empMap.getEmployeeMap().get("3").getFirstName());
-		assertEquals("Johnson", empMap.getEmployeeMap().get("3").getLastName());
-		assertEquals("michael.johnson@example.com", empMap.getEmployeeMap().get("3").getEmail());
+		assertEquals("Jane", jane.getFirstName());
+		assertEquals("Smith", jane.getLastName());
+		assertEquals("jane.smith@example.com", jane.getEmail());
 
-		assertEquals("Emily", empMap.getEmployeeMap().get("4").getFirstName());
-		assertEquals("Williams", empMap.getEmployeeMap().get("4").getLastName());
-		assertEquals("emily.williams@example.com", empMap.getEmployeeMap().get("4").getEmail());
+		assertEquals("Michael", michael.getFirstName());
+		assertEquals("Johnson", michael.getLastName());
+		assertEquals("michael.johnson@example.com", michael.getEmail());
+
+		assertEquals("Emily", emily.getFirstName());
+		assertEquals("Williams", emily.getLastName());
+		assertEquals("emily.williams@example.com", emily.getEmail());
 	}
 }
