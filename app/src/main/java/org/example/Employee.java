@@ -22,19 +22,19 @@ public class Employee {
 	// Create the getter methods for the employee class
 	// GETTERS
 	public String getEmployeeId() {
-		return employee_id;
+		return this.employee_id;
 	}
 
 	public String getFirstName() {
-		return first_name;
+		return this.first_name;
 	}
 
 	public String getLastName() {
-		return last_name;
+		return this.last_name;
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	// SETTERS
