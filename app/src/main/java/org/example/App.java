@@ -10,5 +10,7 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
-    }
+		Employee emp = new Employee("1234", "John", "Doe", "charles@yahoo.com");
+		emp.displayEmployee();
+	}
 }
