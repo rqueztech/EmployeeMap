@@ -1,6 +1,8 @@
 /*
  * Create an employee class that will store all of the information
  * for each employee. */
+package org.example;
+
 class Employee {
 
 	// Set the private variables for the employee class
@@ -50,5 +52,23 @@ class Employee {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public boolean equals(Employee emp) {
+		if (this.employee_id.equals(emp.getEmployeeId()) && this.first_name.equals(emp.getFirstName())
+				&& this.last_name.equals(emp.getLastName()) && this.email.equals(emp.getEmail())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public void displayEmployee() {
+		System.out.println("------------------------------");
+		System.out.println("Employee ID: " + employee_id);
+		System.out.println("First Name: " + first_name);
+		System.out.println("Last Name: " + last_name);
+		System.out.println("Email: " + email);
+		System.out.println("------------------------------");
 	}
 }
