@@ -3,7 +3,7 @@
  * for each employee. */
 package org.example;
 
-class Employee {
+public class Employee {
 
 	// Set the private variables for the employee class
 	private String employee_id;
@@ -13,10 +13,10 @@ class Employee {
 
 	// Create the constructor for the employee class
 	public Employee(String employee_id, String first_name, String last_name, String email) {
-		this.employee_id = employee_id;
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.email = email;
+		this.setEmployeeId(employee_id);
+		this.setFirstName(first_name);
+		this.setLastName(last_name);
+		this.setEmail(email);
 	}
 
 	// Create the getter methods for the employee class
