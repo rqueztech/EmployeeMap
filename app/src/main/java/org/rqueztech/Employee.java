@@ -1,7 +1,7 @@
 /*
  * Create an employee class that will store all of the information
  * for each employee. */
-package org.example;
+package org.rqueztech;
 
 public class Employee {
 
