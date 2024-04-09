@@ -21,6 +21,12 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+    
+    // https://mvnrepository.com/artifact/com.opencsv/opencsv
+    implementation("com.opencsv:opencsv:5.9")
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation("mysql:mysql-connector-java:8.0.33")        
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -29,6 +35,23 @@ java {
         languageVersion = JavaLanguageVersion.of(8)
     }
 }
+
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
+}
+
+tasks.register("testResources") {
+    doLast {
+        val resource = file("src/main/resources/mainmenu.csv")
+        if (resource.exists()) {
+            println("Content of mainmenu.csv:")
+            println(resource.readText())
+        } else {
+            println("Failed to load resource: mainmenu.csv")
+        }
+    }
+}
+
 
 application {
     // Define the main class for the application.

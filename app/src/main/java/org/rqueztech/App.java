@@ -3,14 +3,26 @@
  */
 package org.rqueztech;
 
+import java.util.Scanner;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public void viewMenu() {
+        System.out.println("**********************************");
+        System.out.println("* Employee Management System     *");
+        System.out.println("* 1. Display Employees           *");
+        System.out.println("* 2. Add Employee                *");
+        System.out.println("* 3. Remove Employee             *");
+        System.out.println("* 4. Update Employee             *");
+        System.out.println("* 5. View Ex-Employees (removed) *");
+        System.out.println("**********************************");
+        System.out.print("\n -> Enter your choice: ");
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-		Employee emp = new Employee("1234", "John", "Doe", "charles@yahoo.com");
-		emp.displayEmployee();
+        Scanner in = new Scanner(System.in);
+
+        App app = new App();
+        app.viewMenu();
+        in.nextLine();
 	}
 }
