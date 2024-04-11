@@ -52,7 +52,6 @@ tasks.register("testResources") {
     }
 }
 
-
 application {
     // Define the main class for the application.
     mainClass = "org.rqueztech.App"

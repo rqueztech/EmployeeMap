@@ -18,6 +18,7 @@ public class EmployeeMap {
 	}
 
 	public void addEmployee(String employee_id, String first_name, String last_name, String email) {
+        System.out.println("Add Employee");
 		this.getEmployeeMap().put(employee_id , new Employee(employee_id, first_name, last_name, email));
 	}
 
@@ -25,8 +26,19 @@ public class EmployeeMap {
 		this.getEmployeeMap().remove(empId);
 	}
 
-	public void getEmployee() {
-		this.getEmployeeMap();
+	public Employee getEmployee(String empId) {
+		return this.employeeMap.get(empId);
 	}
+
+    public void displayEmployees() {
+        System.out.println("Display Employees");
+        for (Map.Entry<String, Employee> entry : this.employeeMap.entrySet()) {
+            System.out.println("Employee ID: " + entry.getKey());
+            System.out.println("First Name: " + entry.getValue().getFirstName());
+            System.out.println("Last Name: " + entry.getValue().getLastName());
+            System.out.println("Email: " + entry.getValue().getEmail());
+            System.out.println();
+        }
+    }
 
 }

@@ -5,24 +5,71 @@ package org.rqueztech;
 
 import java.util.Scanner;
 
-public class App {
-    public void viewMenu() {
-        System.out.println("**********************************");
-        System.out.println("* Employee Management System     *");
-        System.out.println("* 1. Display Employees           *");
-        System.out.println("* 2. Add Employee                *");
-        System.out.println("* 3. Remove Employee             *");
-        System.out.println("* 4. Update Employee             *");
-        System.out.println("* 5. View Ex-Employees (removed) *");
-        System.out.println("**********************************");
-        System.out.print("\n -> Enter your choice: ");
-    }
+import com.opencsv.CSVReader;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.List;
+
+public class App {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        App app = new App();
-        app.viewMenu();
-        in.nextLine();
+        App app = new App(); 
+        EmployeeMap employeeMap = new EmployeeMap();
+        DisplayMenus menus = new DisplayMenus();
+
+        boolean isValid = false;
+
+        while(!isValid) {
+            while(true) {
+                menus.displayMenu();
+
+                String information = in.nextLine();
+
+                String employee_id = "";
+                String first_name = "";
+                String last_name = "";
+                String email = "";
+
+                if (information.equals("0")) {
+                    System.out.println("You selected option 0");
+                    break;
+                } else if (information.equals("1")) {
+                    System.out.print("Employee ID: ");
+                    employee_id = in.nextLine();
+
+                    System.out.print("First Name: ");
+                    first_name = in.nextLine();
+
+                    System.out.print("Last Name: ");
+                    last_name = in.nextLine();
+
+                    System.out.print("Email: ");
+                    email = in.nextLine();
+
+                    employeeMap.addEmployee(employee_id, first_name, last_name, email);
+                    
+                    System.out.print("Do you want to add another employee? (Y/N): ");
+                    String answer = in.nextLine();
+
+                    if (answer.equals("Y") || answer.equals("y")) {
+                        employeeMap.displayEmployees();
+                    } else if(answer.equals("N") || answer.equals("n")) {
+                        System.out.println("You selected option 1");
+                        break;
+                    }
+
+                } else if (information.equals("2")) {
+                    System.out.println("You selected option 2");
+                } else if (information.equals("3")) {
+                    System.out.println("You selected option 3");
+                } else if (information.equals("4")) {
+                    System.out.println("You selected option 4");
+                } else if (information.equals("5")) {
+                    System.out.println("You selected option 5");
+                }
+            }
+        }
 	}
 }
