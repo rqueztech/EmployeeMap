@@ -27,41 +27,41 @@ public class App {
 
                 String information = in.nextLine();
 
-                String employee_id = "";
                 String first_name = "";
                 String last_name = "";
                 String email = "";
+
 
                 if (information.equals("0")) {
                     System.out.println("You selected option 0");
                     break;
                 } else if (information.equals("1")) {
-                    System.out.print("Employee ID: ");
-                    employee_id = in.nextLine();
+                    while(true) {
+                        System.out.print("First Name: ");
+                        first_name = in.nextLine();
 
-                    System.out.print("First Name: ");
-                    first_name = in.nextLine();
+                        System.out.print("Last Name: ");
+                        last_name = in.nextLine();
 
-                    System.out.print("Last Name: ");
-                    last_name = in.nextLine();
+                        System.out.print("Email: ");
+                        email = in.nextLine();
 
-                    System.out.print("Email: ");
-                    email = in.nextLine();
+                        employeeMap.addEmployee(first_name, last_name, email);
+                        
+                        System.out.print("Do you want to add another employee? (Y/N): ");
+                        String answer = in.nextLine();
 
-                    employeeMap.addEmployee(employee_id, first_name, last_name, email);
-                    
-                    System.out.print("Do you want to add another employee? (Y/N): ");
-                    String answer = in.nextLine();
-
-                    if (answer.equals("Y") || answer.equals("y")) {
-                        employeeMap.displayEmployees();
-                    } else if(answer.equals("N") || answer.equals("n")) {
-                        System.out.println("You selected option 1");
-                        break;
+                        if (answer.equals("Y") || answer.equals("y")) {
+                            System.out.println("You selected option nnnnnnnnnnnnn");
+                            employeeMap.displayEmployees();
+                        } else if(answer.equals("N") || answer.equals("n")) {
+                            System.out.println("You selected option 1");
+                            break;
+                        }
                     }
 
                 } else if (information.equals("2")) {
-                    System.out.println("You selected option 2");
+                    employeeMap.displayEmployees();
                 } else if (information.equals("3")) {
                     System.out.println("You selected option 3");
                 } else if (information.equals("4")) {
