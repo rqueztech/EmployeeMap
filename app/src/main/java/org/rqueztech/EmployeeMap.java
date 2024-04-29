@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class EmployeeMap {
 	private Map <String, Employee> employeeMap;
+    public int empNo;
 
 	public EmployeeMap() {
 		this.employeeMap = new HashMap<String, Employee>();
@@ -17,8 +18,11 @@ public class EmployeeMap {
 		return this.employeeMap;
 	}
 
-	public void addEmployee(String employee_id, String first_name, String last_name, String email) {
+	public void addEmployee(String first_name, String last_name, String email) {
         System.out.println("Add Employee");
+        
+        String employee_id = String.valueOf(empNo++);
+
 		this.getEmployeeMap().put(employee_id , new Employee(employee_id, first_name, last_name, email));
 	}
 
@@ -33,11 +37,12 @@ public class EmployeeMap {
     public void displayEmployees() {
         System.out.println("Display Employees");
         for (Map.Entry<String, Employee> entry : this.employeeMap.entrySet()) {
+            System.out.println("================================");
             System.out.println("Employee ID: " + entry.getKey());
             System.out.println("First Name: " + entry.getValue().getFirstName());
             System.out.println("Last Name: " + entry.getValue().getLastName());
             System.out.println("Email: " + entry.getValue().getEmail());
-            System.out.println();
+            System.out.println("================================");
         }
     }
 
