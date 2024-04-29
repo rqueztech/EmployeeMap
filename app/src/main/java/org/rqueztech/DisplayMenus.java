@@ -15,5 +15,6 @@ public class DisplayMenus {
         System.out.println("* 4. Update Employee.         *");
         System.out.println("* 5. View Ex-Employees(rmvd)  *");
         System.out.println("*******************************");
+        System.out.println(" -> \nEnter input: ");
     }
 }

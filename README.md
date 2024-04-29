@@ -13,8 +13,8 @@
 
 
 # Optimal Running Method
-- Run the method using gradlew.bat (gradlew on linux) followed by --console=plain flag to avoid extra clutter and run time details.
-- Example: gradlew.bat build run --console=plain
+- Run the method using gradlew.bat (gradlew on linux) followed by **--console=plain** flag to avoid extra clutter and run time details.
+- Example: gradlew.bat build run **--console=plain**
 
 # Features
 - Allows entry of users into into a map prompting name, last name, and email address.

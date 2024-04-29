@@ -12,12 +12,19 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class App {
+    // function to simulate screen cleaning through ANSI
+    public static void clearscreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();   
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         App app = new App(); 
         EmployeeMap employeeMap = new EmployeeMap();
         DisplayMenus menus = new DisplayMenus();
+        clearscreen();
 
         boolean isValid = false;
 
@@ -32,10 +39,7 @@ public class App {
                 String email = "";
 
 
-                if (information.equals("0")) {
-                    System.out.println("You selected option 0");
-                    break;
-                } else if (information.equals("1")) {
+                if (information.equals("1")) {
                     while(true) {
                         System.out.print("First Name: ");
                         first_name = in.nextLine();
