@@ -23,7 +23,7 @@ public class EmployeeMap {
         
         String employee_id = String.valueOf(++empNo);
 
-		this.getEmployeeMap().put(employee_id , new Employee(employee_id, first_name, last_name, email));
+		this.getEmployeeMap().put(employee_id , new Employee(first_name, last_name, email));
 	}
 
 	public void removeEmployee(String empId) {
