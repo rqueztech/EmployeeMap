@@ -10,8 +10,15 @@ import com.opencsv.CSVReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class App {
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -19,56 +26,81 @@ public class App {
         EmployeeMap employeeMap = new EmployeeMap();
         DisplayMenus menus = new DisplayMenus();
 
-        boolean isValid = false;
+        boolean runProgram = true;
 
-        while(!isValid) {
-            while(true) {
-                menus.displayMenu();
+        Pattern digits = Pattern.compile("[^A-Za-z]");
+        Matcher matcher;
 
-                String information = in.nextLine();
+        while(runProgram) {
+            System.out.println("*******************************");
+            System.out.println("*         Main Menu           *");
+            System.out.println("*******************************");
+            System.out.println("* 1. Add Employees.           *");
+            System.out.println("* 2. Display Employee.        *");
+            System.out.println("* 3. Remove Employee.         *");
+            System.out.println("* 4. Update Employee.         *");
+            System.out.println("* 5. View Ex-Employees(rmvd)  *");
+            System.out.println("*******************************");
+            System.out.print("Enter Input: ");
 
-                String employee_id = "";
-                String first_name = "";
-                String last_name = "";
-                String email = "";
 
-                if (information.equals("0")) {
-                    System.out.println("You selected option 0");
-                    break;
-                } else if (information.equals("1")) {
-                    System.out.print("Employee ID: ");
-                    employee_id = in.nextLine();
+            String information = in.next();
 
-                    System.out.print("First Name: ");
-                    first_name = in.nextLine();
+            String employee_id = "";
+            String first_name = "";
+            String last_name = "";
+            String email = "";
 
-                    System.out.print("Last Name: ");
-                    last_name = in.nextLine();
+            System.out.flush();
 
-                    System.out.print("Email: ");
-                    email = in.nextLine();
+            if (information.equals("1")) {
+                boolean continueAdding = true;
+                while(continueAdding) {
+                    do {
+                        System.out.print("Enter Valid First Name: ");
+                        first_name = in.nextLine();
+                        matcher = digits.matcher(first_name);
+                    } while (first_name.isEmpty() || matcher.find());
 
-                    employeeMap.addEmployee(employee_id, first_name, last_name, email);
+
+                    do {
+                        System.out.print("Enter Valid Last Name: ");
+                        last_name = in.nextLine();
+                        matcher = digits.matcher(last_name);
+                    } while (last_name.isEmpty() || matcher.find());
+
+                    do {
+                        System.out.print("Email Name: ");
+                        email = in.nextLine();
+                        matcher = digits.matcher(email);
+                    } while (email.isEmpty());
+
+                    employeeMap.addEmployee(first_name, last_name, email);
                     
                     System.out.print("Do you want to add another employee? (Y/N): ");
                     String answer = in.nextLine();
 
                     if (answer.equals("Y") || answer.equals("y")) {
-                        employeeMap.displayEmployees();
+                        clearScreen();
                     } else if(answer.equals("N") || answer.equals("n")) {
                         System.out.println("You selected option 1");
-                        break;
+                        continueAdding = false;
                     }
-
-                } else if (information.equals("2")) {
-                    System.out.println("You selected option 2");
-                } else if (information.equals("3")) {
-                    System.out.println("You selected option 3");
-                } else if (information.equals("4")) {
-                    System.out.println("You selected option 4");
-                } else if (information.equals("5")) {
-                    System.out.println("You selected option 5");
-                }
+            }
+            } else if (information.equals("2")) { 
+                employeeMap.displayEmployees();
+                System.out.print("Hit any value and enter to continue: ");
+                String here = in.nextLine();
+            } else if (information.equals("3")) {
+                System.out.println("Remove");
+            } else if (information.equals("4")) {
+                System.out.println("Update");
+            } else if (information.equals("5")) {
+                System.out.println("Ex Employees");
+            } else if(information.equals("Exit")) {
+                runProgram = false;
+            } else {
+                System.out.println("Invalid Input");
             }
         }
 	}

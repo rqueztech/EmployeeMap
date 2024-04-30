@@ -10,36 +10,36 @@ public class EmployeeMapTest {
     @Test public void testEmployeeMapSize() {
 		EmployeeMap empMap = new EmployeeMap();
 
-		empMap.addEmployee("1", "John", "Doe", "john.doe@example.com");
-		empMap.addEmployee("2", "Jane", "Smith", "jane.smith@example.com");
-		empMap.addEmployee("3", "Michael", "Johnson", "michael.johnson@example.com");
-		empMap.addEmployee("4", "Emily", "Williams", "emily.williams@example.com");
-		empMap.addEmployee("5", "Christopher", "Brown", "christopher.brown@example.com");
-		empMap.addEmployee("6", "Amanda", "Jones", "amanda.jones@example.com");
-		empMap.addEmployee("7", "David", "Garcia", "david.garcia@example.com");
-		empMap.addEmployee("8", "Sarah", "Martinez", "sarah.martinez@example.com");
-		empMap.addEmployee("9", "James", "Hernandez", "james.hernandez@example.com");
-		empMap.addEmployee("10", "Jennifer", "Young", "jennifer.young@example.com");
-		empMap.addEmployee("11", "Matthew", "King", "matthew.king@example.com");
-		empMap.addEmployee("12", "Jessica", "Lee", "jessica.lee@example.com");
-		empMap.addEmployee("13", "Daniel", "Walker", "daniel.walker@example.com");
-		empMap.addEmployee("14", "Ashley", "Allen", "ashley.allen@example.com");
-		empMap.addEmployee("15", "Robert", "Green", "robert.green@example.com");
-		empMap.addEmployee("16", "Megan", "Evans", "megan.evans@example.com");
-		empMap.addEmployee("17", "William", "Thomas", "william.thomas@example.com");
-		empMap.addEmployee("18", "Elizabeth", "Harris", "elizabeth.harris@example.com");
-		empMap.addEmployee("19", "Joseph", "Clark", "joseph.clark@example.com");
-		empMap.addEmployee("20", "Nicole", "Lewis", "nicole.lewis@example.com");
-		empMap.addEmployee("21", "David", "Robinson", "david.robinson@example.com");
-		empMap.addEmployee("22", "Melissa", "Walker", "melissa.walker@example.com");
-		empMap.addEmployee("23", "Charles", "Perez", "charles.perez@example.com");
-		empMap.addEmployee("24", "Laura", "Hall", "laura.hall@example.com");
-		empMap.addEmployee("25", "Kevin", "Young", "kevin.young@example.com");
-		empMap.addEmployee("26", "Amanda", "Wright", "amanda.wright@example.com");
-		empMap.addEmployee("27", "John", "Lopez", "john.lopez@example.com");
-		empMap.addEmployee("28", "Stephanie", "Hill", "stephanie.hill@example.com");
-		empMap.addEmployee("29", "Andrew", "Scott", "andrew.scott@example.com");
-		empMap.addEmployee("30", "Samantha", "Green", "samantha.green@example.com");
+		empMap.addEmployee("John", "Doe", "john.doe@example.com");
+		empMap.addEmployee("Jane", "Smith", "jane.smith@example.com");
+		empMap.addEmployee("Michael", "Johnson", "michael.johnson@example.com");
+		empMap.addEmployee("Emily", "Williams", "emily.williams@example.com");
+		empMap.addEmployee("Christopher", "Brown", "christopher.brown@example.com");
+		empMap.addEmployee("Amanda", "Jones", "amanda.jones@example.com");
+		empMap.addEmployee("David", "Garcia", "david.garcia@example.com");
+		empMap.addEmployee("Sarah", "Martinez", "sarah.martinez@example.com");
+		empMap.addEmployee("James", "Hernandez", "james.hernandez@example.com");
+		empMap.addEmployee("Jennifer", "Young", "jennifer.young@example.com");
+		empMap.addEmployee("Matthew", "King", "matthew.king@example.com");
+		empMap.addEmployee("Jessica", "Lee", "jessica.lee@example.com");
+		empMap.addEmployee("Daniel", "Walker", "daniel.walker@example.com");
+		empMap.addEmployee("Ashley", "Allen", "ashley.allen@example.com");
+		empMap.addEmployee("Robert", "Green", "robert.green@example.com");
+		empMap.addEmployee("Megan", "Evans", "megan.evans@example.com");
+		empMap.addEmployee("William", "Thomas", "william.thomas@example.com");
+		empMap.addEmployee("Elizabeth", "Harris", "elizabeth.harris@example.com");
+		empMap.addEmployee("Joseph", "Clark", "joseph.clark@example.com");
+		empMap.addEmployee("Nicole", "Lewis", "nicole.lewis@example.com");
+		empMap.addEmployee("David", "Robinson", "david.robinson@example.com");
+		empMap.addEmployee("Melissa", "Walker", "melissa.walker@example.com");
+		empMap.addEmployee("Charles", "Perez", "charles.perez@example.com");
+		empMap.addEmployee("Laura", "Hall", "laura.hall@example.com");
+		empMap.addEmployee("Kevin", "Young", "kevin.young@example.com");
+		empMap.addEmployee("Amanda", "Wright", "amanda.wright@example.com");
+		empMap.addEmployee("John", "Lopez", "john.lopez@example.com");
+		empMap.addEmployee("Stephanie", "Hill", "stephanie.hill@example.com");
+		empMap.addEmployee("Andrew", "Scott", "andrew.scott@example.com");
+		empMap.addEmployee("Samantha", "Green", "samantha.green@example.com");
 
 		assertEquals(30, empMap.getEmployeeMap().size());
 	}
@@ -47,10 +47,10 @@ public class EmployeeMapTest {
 	@Test public void testEmployeeData() {
 		EmployeeMap empMap = new EmployeeMap();
 		
-		empMap.addEmployee("1", "John", "Doe", "john.doe@example.com");
-		empMap.addEmployee("2", "Jane", "Smith", "jane.smith@example.com");
-		empMap.addEmployee("3", "Michael", "Johnson", "michael.johnson@example.com");
-		empMap.addEmployee("4", "Emily", "Williams", "emily.williams@example.com");
+		empMap.addEmployee("John", "Doe", "john.doe@example.com");
+		empMap.addEmployee("Jane", "Smith", "jane.smith@example.com");
+		empMap.addEmployee("Michael", "Johnson", "michael.johnson@example.com");
+		empMap.addEmployee("Emily", "Williams", "emily.williams@example.com");
 
 		Employee john = empMap.getEmployeeMap().get("1");
 		Employee jane = empMap.getEmployeeMap().get("2");

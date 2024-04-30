@@ -12,7 +12,7 @@ public class Employee {
 	private String email;
 
 	// Create the constructor for the employee class
-	public Employee(String employee_id, String first_name, String last_name, String email) {
+	public Employee(String first_name, String last_name, String email) {
 		this.setEmployeeId(employee_id);
 		this.setFirstName(first_name);
 		this.setLastName(last_name);
