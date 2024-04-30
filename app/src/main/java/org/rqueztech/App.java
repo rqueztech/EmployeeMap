@@ -24,7 +24,7 @@ public class App {
 
         App app = new App(); 
         EmployeeMap employeeMap = new EmployeeMap();
-        clearscreen();
+        clearScreen();
 
         boolean runProgram = true;
 
@@ -50,7 +50,9 @@ public class App {
 
             System.out.flush();
 
-            if (information.equals("1")) {
+            String menuOption = in.nextLine();
+
+            if (menuOption.equals("1")) {
                 boolean continueAdding = true;
                 while(continueAdding) {
                     do {
@@ -84,17 +86,17 @@ public class App {
                         continueAdding = false;
                     }
             }
-            } else if (information.equals("2")) { 
+            } else if (menuOption.equals("2")) { 
                 employeeMap.displayEmployees();
                 System.out.print("Hit any value and enter to continue: ");
                 String here = in.nextLine();
-            } else if (information.equals("3")) {
+            } else if (menuOption.equals("3")) {
                 System.out.println("Remove");
-            } else if (information.equals("4")) {
+            } else if (menuOption.equals("4")) {
                 System.out.println("Update");
-            } else if (information.equals("5")) {
+            } else if (menuOption.equals("5")) {
                 System.out.println("Ex Employees");
-            } else if(information.equals("Exit")) {
+            } else if(menuOption.equals("Exit")) {
                 runProgram = false;
             } else {
                 System.out.println("Invalid Input");
