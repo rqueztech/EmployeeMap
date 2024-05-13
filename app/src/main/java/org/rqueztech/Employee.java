@@ -71,4 +71,8 @@ public class Employee {
 		System.out.println("Email: " + email);
 		System.out.println("------------------------------");
 	}
+
+    public String toString() {
+        return String.format("%s,%s,%s,%s", employee_id, first_name, last_name, email);
+    }
 }
