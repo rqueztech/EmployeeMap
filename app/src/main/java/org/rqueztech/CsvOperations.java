@@ -34,7 +34,7 @@ public class CsvOperations {
      * @param fileName Takes the name of the csv file as a string. 
      * @param records Takes an array of strings to write to the csv file as a List.
      */
-    public List writeCsvFile(String fileName, List <String[]> records) {
+    public List<String[]> writeCsvFile(String fileName, List <String[]> records) {
         try {
             CSVWriter writer = new CSVWriter(new FileWriter(fileName));
             writer.writeAll(records);
