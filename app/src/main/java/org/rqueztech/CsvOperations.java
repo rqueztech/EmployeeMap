@@ -36,7 +36,7 @@ public class CsvOperations {
      */
     public List<String[]> writeCsvFile(String fileName, List <String[]> records) {
         try {
-            CSVWriter writer = new CSVWriter(new FileWriter(fileName));
+            CSVWriter writer = new CSVWriter(new FileWriter(fileName, true));
             writer.writeAll(records);
             writer.close();
         } catch (Exception e) {
@@ -45,4 +45,5 @@ public class CsvOperations {
 
         return records;
     }
+
 }
