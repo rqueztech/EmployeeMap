@@ -40,9 +40,10 @@ public class CsvOperationsTest {
 
             employeestringlist.add(employee);
         }
-
-        csvopen.writeCsvFile("TestEmployee.csv", employeestringlist);
-
-        assertTrue(filename, file.exists());
+        
+        csvopen.writeCsvFile(filename, employeestringlist);
+        
+        System.out.println(file);
+        assertTrue(file.exists());
     }
 }

@@ -3,6 +3,9 @@
  * for each employee. */
 package org.rqueztech;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Employee {
 
 	// Set the private variables for the employee class
@@ -18,6 +21,11 @@ public class Employee {
 		this.setLastName(last_name);
 		this.setEmail(email);
 	}
+
+    // Return it as a list
+    public String[] asList() {
+        return new String[]{this.employee_id, this.first_name, this.last_name, this.email};
+    }
 
 	// Create the getter methods for the employee class
 	// GETTERS
