@@ -25,9 +25,10 @@ public class CsvOperationsTest {
             System.out.println("Path does not exist");
         }
 
-        employeelist.add(new Employee("Charles", "Barley", "tested@yeaboiiiiiii.com"));
-        employeelist.add(new Employee("Carls", "Junior", "charlesjunior@yoohoo.com"));
-        employeelist.add(new Employee("Hello", "Junior", "hijunior@fakemail.com"));
+        employeelist.add(new Employee("1", "Charles", "Barley", "tested@yeaboiiiiiii.com"));
+        employeelist.add(new Employee("2", "Carls", "Junior", "charlesjunior@yoohoo.com"));
+        employeelist.add(new Employee("3", "Hello", "Junior", "hijunior@fakemail.com"));
+
         List<String[]> employeestringlist = new ArrayList<>();
 
         for (Employee currentEmployee : employeelist) {
